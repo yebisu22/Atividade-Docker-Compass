@@ -57,3 +57,5 @@ volumes:
 
 
 ```
+
+Automaticamente no Docker-Desktop será criado um container como esse:
