@@ -12,3 +12,7 @@ https://www.docker.com/products/docker-desktop/
 https://code.visualstudio.com/download
 
 Depois da instalação, adicione a extensão Docker dentro do VS CODE:
+<p float="left">
+
+ <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/dcaeb550af63c017c38e4cae1248cb67a76df62a/IMG/Docker%20VS" width="450" />
+</p>
