@@ -59,3 +59,9 @@ volumes:
 ```
 
 Automaticamente no Docker-Desktop será criado um container como esse:
+<p float="left">
+
+ <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/d74b5c5da291fdd9d7de2c0ff5c9074b2c7e4132/IMG/Exemplo%20Container" width="250" />
+</p>
+
+E está pronto, Seu wordpress já esta ativo localmente!🙂
