@@ -7,7 +7,7 @@ Nos primeiros momentos, estou utilizando o Oracle linux 8.9 no WSL e o docker-de
 O objetivo final do projeto é baseado nessa arquitetura 
 <p float="left">
 
- <img src="" width="450" />
+ <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/ab6b99970bca77b0771c70119862a338833b1c4e/IMG/Arquitetura.png" width="450" />
 </p>
 
 
@@ -22,7 +22,7 @@ https://code.visualstudio.com/download
 Depois da instalação, adicione a extensão Docker dentro do VS CODE:
 <p float="left">
 
- <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/dcaeb550af63c017c38e4cae1248cb67a76df62a/IMG/Docker%20VS" width="450" />
+ <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/dcaeb550af63c017c38e4cae1248cb67a76df62a/IMG/Docker%20VS" width="290" />
 </p>
 
 Após adicionar. criei um arquivo chamado 
