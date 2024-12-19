@@ -4,7 +4,7 @@ Nesse repositório estarei documentando todo o meu passo a passo do projeto AWS.
 
 Nos primeiros momentos, estou utilizando o Oracle linux 8.9 no WSL e o docker-desktop para gerenciar containers 
 
-O objetivo final do projeto é baseado nessa arquitetura 
+O objetivo final do projeto é baseado nessa arquitetura:
 <p float="left">
 
  <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/ab6b99970bca77b0771c70119862a338833b1c4e/IMG/Arquitetura.png" width="450" />
