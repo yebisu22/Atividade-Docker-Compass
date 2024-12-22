@@ -1,8 +1,8 @@
 ## Contextualização
 
-Nesse repositório estarei documentando todo o meu passo a passo do projeto AWS.
+Nesse repositório está sendo documentado todo o passo a passo do projeto AWS.
 
-Nos primeiros momentos, estou utilizando o Oracle linux 8.9 no WSL e o Docker-Desktop para gerenciar containers 
+Nos primeiros momentos, foi utilizado o Oracle linux 8.9 no WSL e o Docker-Desktop para gerenciar containers 
 
 O objetivo final do projeto é baseado nessa arquitetura:
 <p float="left">
@@ -13,22 +13,22 @@ O objetivo final do projeto é baseado nessa arquitetura:
 
 ## Rodando Wordpress localmente:
 
-Para fazer isso, eu instalei o Docker-Desktop e o VS CODE:
+Para fazer isso, é nescessário instalar o Docker-Desktop e o VS CODE:
 
 https://www.docker.com/products/docker-desktop/
 
 https://code.visualstudio.com/download
 
-Depois da instalação, adicionei a extensão Docker dentro do VS CODE:
+Depois da instalação, adicione a extensão Docker dentro do VS CODE:
 <p float="left">
 
  <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/dcaeb550af63c017c38e4cae1248cb67a76df62a/IMG/Docker%20VS" width="290" />
 </p>
 
-Após adicionar. criei um arquivo chamado 
+Após adicionar. crie um arquivo chamado 
 ```docker-compose.yml```
 
-E peguei o script padrão indicado pelo Wordpress:
+E de recomendação, pegue o script padrão indicado pelo Wordpress:
 ```yml
 
 version: '3.1'
@@ -81,9 +81,9 @@ E está pronto, Seu wordpress já esta ativo localmente!🙂 (Para acessar basta
 
 ## Rodando wordpress em uma maquina EC2
 
-Primeiro criei uma instancia EC2 na AWS
+Primeiro crie uma instancia EC2 na AWS
 
-Antes de criar, configurei uma VPC com rede e sub rede publicas para poder acessar via SSH ou TTY e também uma chave de acesso
+Antes de criar, configure uma VPC com rede e sub rede publicas para poder acessar via SSH ou TTY e também uma chave de acesso
 
 (em breve entro detalhes sobre como configurar uma VPC e Grupos de segurança).
 
@@ -97,3 +97,5 @@ E voce vera uma tela como essa:
 
  <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/6cf1aeae5171aa6c5df1302a4b825afb633486e8/IMG/Pombo%20Ec2.png" width="450" />
 </p>
+
+Se ela essa tela apareceu sinal que está tudo certo.
