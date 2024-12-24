@@ -132,7 +132,7 @@ Todo tráfego 0.0.0.0/0
 ```
 Dessa forma todas as portas necessárias ja foram liberadas
 
-##Criando um EFS 
+## Criando um EFS 
 
 O EFS (Elastic File System) será uma ferramenta de volume e a criação é bem simples
 
@@ -143,5 +143,58 @@ E pronto seu EFS ta rodando
 
 <p float="left">
 
- <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/c1e0b2108058add65cf9877eee62b18159bae9c5/IMG/VPC%20cf.png" width="750" />
+ <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/bba8c4c2b036a59d9fda6e40f0286a7fb56a0ae6/IMG/EFS.png" width="750" />
 </p>
+
+## Criando um RDS
+
+O RDS será a ferramenta de banco de dados utilizado no projeto com o MYSQL 
+
+Nele será guardada as informações do Wordpress.
+
+Primeira parte é selecionar o banco de dados utilizado e será o MYSQL
+
+Logo após configure o nome do banco, senha e o nome do usuario (nos exemplos usaremos os padrões)
+
+Utilize nossa VPC criada e deixe com o grupo de segurança privado
+
+Em opções avançadas existe a opção de criar uma Database ao subir o RDS e nesse projeto será utilizado
+
+verifique se está na porta 3306 e pronto, seu RDS ta pronto para uso
+
+<p float="left">
+
+ <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/56462bb0875463f219ddca1eb17d8809484b36da/IMG/RDS.png" width="750" />
+</p>
+
+## Criando uma Bastion Host
+
+A Bastion host será utlizada para acessar maquinas EC2 privadas
+
+A criação pode variar bastante aos gostos pessoais a respeito do sistema operacional, nesse projeto foi usado o Amazon Linux 2.
+
+Crie e coloque um par de chaves para acesso da maquina por SSH
+
+Coloque sua instancia no grupo de segurança publico e atribua um ip publico e crie a instancia.
+
+<p float="left">
+
+ <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/1086e348d8d29b10bddd9bd52384594d882b1fd1/IMG/Bastion%20Host.png" width="650" />
+</p>
+
+## Entrando na instancia EC2
+
+Primeiro pegue as chaves credenciais e coloque na pasta que voce deseja utilizar para entrar na maquina no projeto foi usado /root/.ssh
+
+Dentro do diretorio da chave de acesso, use o comando 
+
+``ssh -i "meu-par-de-chaves.pem" ec2-user@xx.xx.xx.xx``
+
+E voce vera uma tela como essa:
+
+<p float="left">
+
+ <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/6cf1aeae5171aa6c5df1302a4b825afb633486e8/IMG/Pombo%20Ec2.png" width="450" />
+</p>
+
+Se ela essa tela apareceu sinal que está tudo certo.
