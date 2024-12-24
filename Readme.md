@@ -504,8 +504,38 @@ Escolha o Load balancer classico
 
 Na hora da criação escolha a VPC de sempre e deixe os mapeamentos de rede (sub redes) publico e o grupo de segurança tambem publico
 
-em Verificações de integridade, coloque a seguinte configuração 
+em Verificações de integridade, coloque a seguinte configuração e crie 
 
 ```
 HTTP porta 80 caminho de ping = /wp-admin/install.php
 ```
+## Atribuindo instancias 
+
+Depois de criado, vá até "Atribuir instancias" e registre sua instancia privada 
+
+Se tudo der certo ira passar pelo teste de integridade
+
+E sera possivel acessar o wordpress pelo DNS do Load balancer 
+
+# Auto Scaling Group
+
+Crie um grupo de Auto Scaling que utiliza o Launch Template. Defina o tamanho mínimo, máximo e desejado das instâncias EC2.
+
+``` bash
+aws autoscaling create-auto-scaling-group \
+  --auto-scaling-group-name "my-auto-scaling-group" \
+  --launch-template "LaunchTemplateName=my-launch-template,Version=1" \
+  --min-size 2 \
+  --max-size 10 \
+  --desired-capacity 3 \
+  --vpc-zone-identifier "subnet-xxxxxxxx" \
+  --health-check-type "EC2" \
+  --health-check-grace-period 300
+
+```
+
+## Associar o Load Balancer ao Auto Scaling Group
+
+Adicione o Load Balancer ao Auto Scaling Group para que ele distribua tráfego para as instâncias EC2 automaticamente.
+
+E pronto seu projeto AWS foi completo 😄
