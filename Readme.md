@@ -211,3 +211,132 @@ Usaremos as ferramentas:
 
 ## Instalando Docker e Docker-compose
 
+Primeiro verifique se tem alguma atualização do sistema com o comando:
+
+```
+sudo yum update -y
+```
+
+Para instalar o Docker use 
+
+```
+sudo yum install docker -y
+```
+
+Adicione um usuario Docker a um grupo
+
+```
+sudo usermod -a -G docker ec2-user
+
+id ec2-user
+
+newgrp Docker
+
+```
+
+Instalando Docker-Compose
+
+```
+wget https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)
+```
+Docker-compose com executavel global e permissões de uso
+
+```
+sudo mv docker-compose-$(uname -s)-$(uname -m) /usr/local/bin/docker-compose
+
+
+sudo chmod -v +x /usr/local/bin/docker-compose
+```
+
+Agora ative eles com o comando
+
+```
+sudo systemctl enable docker.service
+
+
+sudo systemctl start docker.service
+```
+
+Para verificar basta usar 
+
+```
+Sudo systemctl status docker
+```
+
+E algo assim deve aparecer 
+
+<p float="left">
+
+ <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/e6f5817770592b8489733bfd17477d214f52d07b/IMG/Docker%20status.png" width="750" />
+</p>
+
+# Instalando o Wordpress
+
+Crie um diretorio 
+
+```
+mkdir wordpress
+```
+Entre no diretorio e crie um arquivo .yml com o codigo padrão do wordpress
+
+```
+vi docker-compose.yml
+```
+E coloque o codigo
+
+```yml
+
+version: '3.1'
+
+services:
+
+  wordpress:
+    image: wordpress
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - wordpress:/var/www/html
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - db:/var/lib/mysql
+
+volumes:
+  wordpress:
+  db:
+
+
+```
+Agora para subir o container use o comando 
+
+```
+docker-compose up -d
+```
+
+## Acessando o site 
+
+Use o endereço IPv4 publico da EC2 
+
+e coloque no navegador com http:// antes do ip
+
+E voce verá algo assim se tudo der certo
+
+<p float="left">
+
+ <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/6ad63de674be86c7e8cacb4854117a716dd864e8/IMG/Wp%20ec2.png" width="750" />
+</p>
+
+#Conectando com o RDS no Wordpress
