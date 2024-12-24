@@ -340,3 +340,24 @@ E voce verá algo assim se tudo der certo
 </p>
 
 # Conectando com o RDS no Wordpress
+
+Basta pegar o Endpoint e os dados criados na nossa RDS anteriormente e colocar no codigo do Wordpress 
+
+Exemplo:
+```yml
+ 
+services:
+  wordpress:
+    image: wordpress:latest
+    container_name: wordpress
+    restart: always
+    ports:
+      - "80:80"
+    environment:
+      WORDPRESS_DB_HOST: Endpoint
+      WORDPRESS_DB_NAME: Nome do Banco
+      WORDPRESS_DB_USER: Seu usuario
+      WORDPRESS_DB_PASSWORD: Sua senha
+
+```
+após isso basta reinicar o container e a já vai estar conectado com o RDS
