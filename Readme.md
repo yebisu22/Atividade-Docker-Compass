@@ -92,6 +92,6 @@ Sendo elas 2 sub redes privadas e 2 publicas
 
 <p float="left">
 
- <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/5815bec98b66db91ecc3c6c50c0546360b9d281c/IMG/Wordpress%20Exemplo" width="450" />
+ <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/c1e0b2108058add65cf9877eee62b18159bae9c5/IMG/VPC%20cf.png" width="750" />
 </p>
 
