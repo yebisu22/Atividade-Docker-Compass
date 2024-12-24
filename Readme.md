@@ -79,23 +79,19 @@ E está pronto, Seu wordpress já esta ativo localmente!🙂 (Para acessar basta
  <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/5815bec98b66db91ecc3c6c50c0546360b9d281c/IMG/Wordpress%20Exemplo" width="450" />
 </p>
 
-## Rodando wordpress em uma maquina EC2
+## Caminho para o Wordpress na EC2 AWS:
 
-Primeiro crie uma instancia EC2 na AWS
+## VPC
 
-Antes de criar, configure uma VPC com rede e sub rede publicas para poder acessar via SSH ou TTY e também uma chave de acesso
+Primeira parte fundamental no nosso projeto, é a criação de uma VPC.
 
-(em breve entro detalhes sobre como configurar uma VPC e Grupos de segurança).
+Crie uma VPC com 4 Sub-redes 3 tabelas de rotas e 2 conexões de rede
 
-Para acessar a EC2 por SSH digite o comando com as credenciais da chave de acesso
+Sendo elas 2 sub redes privadas e 2 publicas
 
-``ssh -i "meu-par-de-chaves.pem" ec2-user@xx.xx.xx.xx``
+ float="left">
 
-E voce vera uma tela como essa:
-
-<p float="left">
-
- <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/6cf1aeae5171aa6c5df1302a4b825afb633486e8/IMG/Pombo%20Ec2.png" width="450" />
+ <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/5815bec98b66db91ecc3c6c50c0546360b9d281c/IMG/Wordpress%20Exemplo" width="450" />
 </p>
 
-Se ela essa tela apareceu sinal que está tudo certo.
+
