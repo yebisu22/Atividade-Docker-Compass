@@ -89,9 +89,9 @@ Crie uma VPC com 4 Sub-redes 3 tabelas de rotas e 2 conexões de rede
 
 Sendo elas 2 sub redes privadas e 2 publicas
 
- float="left">
+
+<p float="left">
 
  <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/5815bec98b66db91ecc3c6c50c0546360b9d281c/IMG/Wordpress%20Exemplo" width="450" />
 </p>
-
 
