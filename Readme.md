@@ -360,4 +360,152 @@ services:
       WORDPRESS_DB_PASSWORD: Sua senha
 
 ```
-após isso basta reinicar o container e a já vai estar conectado com o RDS
+Após isso basta reinicar o container e a já vai estar conectado com o RDS
+
+# Conectando com o EFS na EC2
+
+é algo bem simples, vá até o diretorio raiz e crie um diretorio dentro de mnt
+
+```
+cd / 
+
+cd mnt
+
+sudo mkdir efs
+```
+Depois anexe o EFS com o comando 
+
+```
+sudo mount -t efs fs-xxxx:/ /mnt/efs
+
+```
+E no wordpress coloque em serviços
+
+```yml
+ volumes:
+      - /mnt/efs:/var/www/html
+```
+Verifique com df -h
+
+E pronto ja esta tudo vinculado ao seu wordpress 😄
+
+# Criadno um script de automatização Wordpress
+
+O script usado foi
+
+```sh
+#!/bin/bash
+
+sudo yum update -y
+
+
+sudo yum install docker -y
+
+
+sudo usermod -a -G docker ec2-user
+
+id ec2-user
+
+newgrp Docker
+
+
+wget https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) 
+
+
+sudo systemctl enable docker.service
+
+
+sudo systemctl start docker.service
+
+
+sudo mv docker-compose-$(uname -s)-$(uname -m) /usr/local/bin/docker-compose
+
+
+sudo chmod -v +x /usr/local/bin/docker-compose
+
+
+mkdir -p /home/ec2-user/wordpress
+
+
+cd /home/ec2-user/wordpress
+
+cat > docker-compose.yml <<EOF
+
+services:
+  wordpress:
+    image: wordpress:latest
+    container_name: wordpress
+    restart: always
+    ports:
+      - "80:80"
+    environment:
+      WORDPRESS_DB_HOST: 
+      WORDPRESS_DB_NAME: 
+      WORDPRESS_DB_USER: 
+      WORDPRESS_DB_PASSWORD: 
+    volumes:
+      - /mnt/efs:/var/www/html
+
+
+EOF
+
+cd wordpress
+
+docker-compose up -d
+
+cd / 
+
+cd mnt
+
+sudo mkdir efs
+
+sudo mount -t efs fs-xxxx:/ /mnt/efs
+
+```
+# Crie um Gateway NAT 
+
+O gateway será usado para passar internet para as instancias privadas
+
+Pra isso criaremos um Gat na sub rede publica com o tipo de conectividade publica
+
+e vincular com as sub rede privada pela tabela de rotas
+
+<p float="left">
+
+ <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/a9a483e459d0bdabf17af96458980b30103c995f/IMG/GAT.png" width="750" />
+</p>
+
+
+
+# Criando uma EC2 privada 
+
+Os passos são os mesmos do publico porem a hora da criação da instancia tem umas mudanças.
+
+Use a sub rede privada (com Gateway NAT) e não atribua ip publico 
+
+use o grupo de segurança privado
+
+e coloque o script acima para poder instalar e rodar o wordpress.
+
+## Conectar com EC2 privada 
+
+Voce vai utilizar uma Bastian Host na mesma VPC da instancia privada e acessar via SSH como se fosse uma instancia publica.
+
+e verá a tela padrão de conexão 
+
+<p float="left">
+
+ <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/6cf1aeae5171aa6c5df1302a4b825afb633486e8/IMG/Pombo%20Ec2.png" width="450" />
+</p>
+
+# Criando um Load Balancer
+
+Escolha o Load balancer classico
+
+Na hora da criação escolha a VPC de sempre e deixe os mapeamentos de rede (sub redes) publico e o grupo de segurança tambem publico
+
+em Verificações de integridade, coloque a seguinte configuração 
+
+```
+HTTP porta 80 caminho de ping = /wp-admin/install.php
+```
