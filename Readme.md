@@ -130,4 +130,18 @@ Regras de saída
 ```
 Todo tráfego 0.0.0.0/0
 ```
+Dessa forma todas as portas necessárias ja foram liberadas
 
+##Criando um EFS 
+
+O EFS (Elastic File System) será uma ferramenta de volume e a criação é bem simples
+
+Faça uma criação padrão e coloque em 2 redes com Grupos de seguranças publicos
+
+E pronto seu EFS ta rodando 
+
+
+<p float="left">
+
+ <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/c1e0b2108058add65cf9877eee62b18159bae9c5/IMG/VPC%20cf.png" width="750" />
+</p>
