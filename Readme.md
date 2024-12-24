@@ -1,4 +1,4 @@
-## Contextualização
+# Contextualização
 
 Nesse repositório está sendo documentado todo o passo a passo do projeto AWS.
 
@@ -11,7 +11,7 @@ O objetivo final do projeto é baseado nessa arquitetura:
 </p>
 
 
-## Rodando Wordpress localmente:
+# Rodando Wordpress localmente:
 
 Para fazer isso, é nescessário instalar o Docker-Desktop e o VS CODE:
 
@@ -79,7 +79,7 @@ E está pronto, Seu wordpress já esta ativo localmente!🙂 (Para acessar basta
  <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/5815bec98b66db91ecc3c6c50c0546360b9d281c/IMG/Wordpress%20Exemplo" width="450" />
 </p>
 
-## Caminho para o Wordpress na EC2 AWS:
+# Caminho para o Wordpress na EC2 AWS:
 
 ## VPC
 
@@ -95,7 +95,7 @@ Sendo elas 2 sub redes privadas e 2 publicas, dessa forma:
  <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/c1e0b2108058add65cf9877eee62b18159bae9c5/IMG/VPC%20cf.png" width="750" />
 </p>
 
-## Configurando Grupos de Segurança
+# Configurando Grupos de Segurança
 
 Configurar bem um Grupo de segurança, vai ser o que sustenta grande parte do nosso projeto, e pra isso será criado 2 grupos, um privado e um publico
 
@@ -132,7 +132,7 @@ Todo tráfego 0.0.0.0/0
 ```
 Dessa forma todas as portas necessárias ja foram liberadas
 
-## Criando um EFS 
+# Criando um EFS 
 
 O EFS (Elastic File System) será uma ferramenta de volume e a criação é bem simples
 
@@ -146,7 +146,7 @@ E pronto seu EFS ta rodando
  <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/bba8c4c2b036a59d9fda6e40f0286a7fb56a0ae6/IMG/EFS.png" width="750" />
 </p>
 
-## Criando um RDS
+# Criando um RDS
 
 O RDS será a ferramenta de banco de dados utilizado no projeto com o MYSQL 
 
@@ -167,7 +167,7 @@ verifique se está na porta 3306 e pronto, seu RDS ta pronto para uso
  <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/56462bb0875463f219ddca1eb17d8809484b36da/IMG/RDS.png" width="750" />
 </p>
 
-## Criando uma Bastion Host
+# Criando uma Bastion Host
 
 A Bastion host será utlizada para acessar maquinas EC2 privadas
 
@@ -198,3 +198,16 @@ E voce vera uma tela como essa:
 </p>
 
 Se ela essa tela apareceu sinal que está tudo certo.
+
+# Wordpress na EC2
+
+Para instalar o Wordpress na EC2 não é algo tão diferente de instalar na maquina local.
+
+Usaremos as ferramentas:
+
+•Docker-Compose
+
+•Docker
+
+## Instalando Docker e Docker-compose
+
