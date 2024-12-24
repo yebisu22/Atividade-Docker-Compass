@@ -87,11 +87,47 @@ Primeira parte fundamental no nosso projeto, é a criação de uma VPC.
 
 Crie uma VPC com 4 Sub-redes 3 tabelas de rotas e 2 conexões de rede
 
-Sendo elas 2 sub redes privadas e 2 publicas
+Sendo elas 2 sub redes privadas e 2 publicas, dessa forma:
 
 
 <p float="left">
 
  <img src="https://github.com/yebisu22/Atividade-Docker-Compass/blob/c1e0b2108058add65cf9877eee62b18159bae9c5/IMG/VPC%20cf.png" width="750" />
 </p>
+
+## Configurando Grupos de Segurança
+
+Configurar bem um Grupo de segurança, vai ser o que sustenta grande parte do nosso projeto, e pra isso será criado 2 grupos, um privado e um publico
+
+•Grupo publico com 4 regras de entrada: 
+```
+Porta 80 HTTP
+
+Porta 2049 NFS
+
+Porta 80 HTTP Ipv6
+
+Porta 22 SSH
+```
+
+Regras de saída 
+```
+Todo tráfego 0.0.0.0/0
+```
+
+•Grupo privado com 3 regras
+
+```
+Porta 22 SSH
+
+Porta 80 HTTP
+
+Porta 3306 MYSQL
+```
+
+Regras de saída 
+
+```
+Todo tráfego 0.0.0.0/0
+```
 
