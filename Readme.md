@@ -519,21 +519,9 @@ E sera possivel acessar o wordpress pelo DNS do Load balancer
 
 # Auto Scaling Group
 
-Crie um grupo de Auto Scaling que utiliza o Launch Template. Defina o tamanho mínimo, máximo e desejado das instâncias EC2.
+Crie um grupo de Auto Scaling. Defina o tamanho mínimo, máximo e desejado das instâncias EC2.
 
-``` bash
-aws autoscaling create-auto-scaling-group \
-  --auto-scaling-group-name "my-auto-scaling-group" \
-  --launch-template "LaunchTemplateName=my-launch-template,Version=1" \
-  --min-size 2 \
-  --max-size 10 \
-  --desired-capacity 3 \
-  --vpc-zone-identifier "subnet-xxxxxxxx" \
-  --health-check-type "EC2" \
-  --health-check-grace-period 300
-
-```
-
+ 
 ## Associar o Load Balancer ao Auto Scaling Group
 
 Adicione o Load Balancer ao Auto Scaling Group para que ele distribua tráfego para as instâncias EC2 automaticamente.
