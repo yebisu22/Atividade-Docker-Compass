@@ -13,7 +13,7 @@ O objetivo final do projeto é baseado nessa arquitetura:
 
 # Rodando Wordpress localmente:
 
-Para fazer isso, é nescessário instalar o Docker-Desktop e o VS CODE:
+Para fazer isso, é necessário instalar o Docker-Desktop e o VS CODE:
 
 https://www.docker.com/products/docker-desktop/
 
@@ -138,7 +138,7 @@ O EFS (Elastic File System) será uma ferramenta de volume e a criação é bem 
 
 Faça uma criação padrão e coloque em 2 redes com Grupos de seguranças publicos
 
-E pronto seu EFS ta rodando 
+E pronto seu EFS esta rodando 
 
 
 <p float="left">
@@ -160,7 +160,7 @@ Utilize nossa VPC criada e deixe com o grupo de segurança privado
 
 Em opções avançadas existe a opção de criar uma Database ao subir o RDS e nesse projeto será utilizado
 
-verifique se está na porta 3306 e pronto, seu RDS ta pronto para uso
+verifique se está na porta 3306 e pronto, seu RDS esta pronto para uso
 
 <p float="left">
 
@@ -389,7 +389,7 @@ Verifique com df -h
 
 E pronto ja esta tudo vinculado ao seu wordpress 😄
 
-# Criadno um script de automatização Wordpress
+# Criando um script de automatização Wordpress
 
 O script usado foi
 
