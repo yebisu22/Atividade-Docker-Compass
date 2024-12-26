@@ -1,3 +1,18 @@
+# Introdução
+Nesse repositorio está a documentação do trabalho de dezembro Wordpress da Compass Uol.
+
+as tecnologias utilizadas foram:
+
+• Vs code
+
+• Docker-Desktop
+
+• Amazon Linux 8.9
+
+• AWS
+
+• Github 
+
 # Contextualização
 
 Nesse repositório está sendo documentado todo o passo a passo do projeto AWS.
