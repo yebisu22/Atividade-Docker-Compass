@@ -13,6 +13,8 @@ as tecnologias utilizadas foram:
 
 • Github 
 
+• Wordpress 
+
 # Contextualização
 
 Nesse repositório está sendo documentado todo o passo a passo do projeto AWS.
