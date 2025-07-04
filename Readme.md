@@ -230,19 +230,19 @@ Usaremos as ferramentas:
 
 Primeiro verifique se tem alguma atualização do sistema com o comando:
 
-```
+```yml
 sudo yum update -y
 ```
 
 Para instalar o Docker use 
 
-```
+```yml
 sudo yum install docker -y
 ```
 
 Adicione um usuario Docker a um grupo
 
-```
+```yml
 sudo usermod -a -G docker ec2-user
 
 id ec2-user
@@ -253,12 +253,12 @@ newgrp Docker
 
 Instalando Docker-Compose
 
-```
+```yml
 wget https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)
 ```
 Docker-compose com executavel global e permissões de uso
 
-```
+```yml
 sudo mv docker-compose-$(uname -s)-$(uname -m) /usr/local/bin/docker-compose
 
 
@@ -267,7 +267,7 @@ sudo chmod -v +x /usr/local/bin/docker-compose
 
 Agora ative eles com o comando
 
-```
+```yml
 sudo systemctl enable docker.service
 
 
@@ -276,7 +276,7 @@ sudo systemctl start docker.service
 
 Para verificar basta usar 
 
-```
+```yml
 Sudo systemctl status docker
 ```
 
@@ -291,12 +291,12 @@ E algo assim deve aparecer
 
 Crie um diretorio 
 
-```
+```yml
 mkdir wordpress
 ```
 Entre no diretorio e crie um arquivo .yml com o codigo padrão do wordpress
 
-```
+```yml
 vi docker-compose.yml
 ```
 E coloque o codigo
@@ -339,7 +339,7 @@ volumes:
 ```
 Agora para subir o container use o comando 
 
-```
+```yml
 docker-compose up -d
 ```
 
@@ -383,7 +383,7 @@ Após isso basta reinicar o container e a já vai estar conectado com o RDS
 
 é algo bem simples, vá até o diretorio raiz e crie um diretorio dentro de mnt
 
-```
+```yml
 cd / 
 
 cd mnt
@@ -392,7 +392,7 @@ sudo mkdir efs
 ```
 Depois anexe o EFS com o comando 
 
-```
+```yml
 sudo mount -t efs fs-xxxx:/ /mnt/efs
 
 ```
@@ -523,7 +523,7 @@ Na hora da criação escolha a VPC de sempre e deixe os mapeamentos de rede (sub
 
 em Verificações de integridade, coloque a seguinte configuração e crie 
 
-```
+```yml
 HTTP porta 80 caminho de ping = /wp-admin/install.php
 ```
 ## Atribuindo instancias 
